@@ -1,8 +1,8 @@
 package com.demansh.ramdm.controllers;
 
-import com.demansh.ramdm.mappers.SearchMapper;
-import com.demansh.ramdm.services.SearchService;
-import com.demansh.ramdm.struct.SearchResponse;
+import com.demansh.ramdm.songssource.mappers.SearchMapper;
+import com.demansh.ramdm.songssource.services.SearchService;
+import com.demansh.ramdm.songssource.struct.SearchResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

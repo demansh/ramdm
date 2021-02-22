@@ -1,8 +1,8 @@
 package com.demansh.ramdm.controllers;
 
-import com.demansh.ramdm.mappers.SongMapper;
-import com.demansh.ramdm.services.SongService;
-import com.demansh.ramdm.struct.SongResponse;
+import com.demansh.ramdm.songssource.mappers.SongMapper;
+import com.demansh.ramdm.songssource.services.SongService;
+import com.demansh.ramdm.songssource.struct.SongResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.demansh.ramdm.struct;
+package com.demansh.ramdm.songssource.struct;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.github.demansh.jamdm.Song;

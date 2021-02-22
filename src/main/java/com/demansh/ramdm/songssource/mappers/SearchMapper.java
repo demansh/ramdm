@@ -1,6 +1,6 @@
-package com.demansh.ramdm.mappers;
+package com.demansh.ramdm.songssource.mappers;
 
-import com.demansh.ramdm.struct.SearchResponse;
+import com.demansh.ramdm.songssource.struct.SearchResponse;
 import com.github.demansh.jamdm.Search;
 
 public interface SearchMapper {
