@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${authorName} + ' - ' + ${songName}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1 style="font-size:14pt" th:text="${authorName} + ' - ' + ${songName}"></h1>
+<div th:utext="${songText}"></div>
+<hr>
+<div><a th:href="@{{uri} (uri = ${authorUri})}"
+        th:text="${authorName}"></a></div>
+</body>
+</html>

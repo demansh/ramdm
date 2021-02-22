@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @ResponseBody
-@RequestMapping("api/v1/search")
+@RequestMapping("search")
 public class SearchController {
     private final SearchService searchService;
     private final SearchMapper searchMapper;

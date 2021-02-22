@@ -5,11 +5,12 @@ import com.demansh.ramdm.services.AuthorService;
 import com.demansh.ramdm.struct.AuthorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@ResponseBody
-@RequestMapping("api/v1/authors")
+@Controller
+@RequestMapping("authors")
 public class AuthorController {
     private final AuthorService authorService;
     private final AuthorMapper authorMapper;
@@ -25,7 +26,11 @@ public class AuthorController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping("/{authorPathName}")
-    public AuthorResponse getSong(@PathVariable String authorPathName) {
-        return authorMapper.toResponse(authorService.getAuthor(authorPathName));
+    public String getAuthor(@PathVariable String authorPathName, Model model) {
+        AuthorResponse author = authorMapper
+                .toResponse(authorService.getAuthor(authorPathName));
+        model.addAttribute("songs", author.getSongs());
+        model.addAttribute("authorName", author.getName());
+        return "author-template";
     }
 }

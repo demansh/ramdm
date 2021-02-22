@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${authorName}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h1 style="font-size:14pt" th:text="${authorName}"></h1>
+<ol>
+    <li th:each="song : ${songs}">
+        <a th:href="@{{uri} (uri = ${song.getUri()})}"
+           th:text="${song.getName()}"></a>
+    </li>
+</ol>
+<hr>
+</body>
+</html>

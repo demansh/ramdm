@@ -5,6 +5,4 @@ import com.github.demansh.jamdm.Song;
 
 public interface SongMapper {
     SongResponse toResponse(Song song);
-
-    String toHtml(Song song);
 }

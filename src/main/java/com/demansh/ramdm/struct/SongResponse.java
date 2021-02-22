@@ -31,19 +31,12 @@ public class SongResponse {
         return song.name();
     }
 
-    public String[] getLines() {
-        return text == null ? null : text.split("\n");
+    public String getText() {
+        return text;
     }
 
     public String getUri() {
-        return String.format("api/v1/authors/%s/songs/%s/%s",
-                song.author().pathName(),
-                song.pathName(),
-                song.id());
-    }
-
-    public String getHtml() {
-        return String.format("api/v1/authors/%s/songs/%s/%s/html",
+        return String.format("/authors/%s/songs/%s/%s",
                 song.author().pathName(),
                 song.pathName(),
                 song.id());

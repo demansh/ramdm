@@ -32,6 +32,6 @@ public class AuthorResponse {
     }
 
     public String getUri() {
-        return String.format("/api/v1/authors/%s", author.pathName());
+        return String.format("/authors/%s", author.pathName());
     }
 }
