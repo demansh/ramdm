@@ -3,11 +3,6 @@
 <head>
     <title th:text="${authorName} + ' - ' + ${songName}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta property="og:title" th:content="${authorName} + ' - ' + ${songName}">
-    <meta property="og:site_name" content="https://ramdm.herokuapp.com">
-    <meta property="og:url" th:content="'https://ramdm.herokuapp.com' + @{{uri} (uri = ${songUri})}">
-    <meta property="og:description" th:content="${songText}">
-    <meta property="og:image" content="">
 </head>
 <body>
 <h1 style="font-size:14pt" th:text="${authorName} + ' - ' + ${songName}"></h1>

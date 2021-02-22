@@ -37,7 +37,6 @@ public class SongController {
         model.addAttribute("authorUri", song.getAuthor().getUri());
         model.addAttribute("songName", song.getName());
         model.addAttribute("songText", song.getText());
-        model.addAttribute("songUri", song.getUri());
         return "song-template";
     }
 }
