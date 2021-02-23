@@ -6,9 +6,14 @@
 </head>
 <body>
 <h1 style="font-size:14pt" th:text="${authorName} + ' - ' + ${songName}"></h1>
+<hr>
 <div th:utext="${songText}"></div>
 <hr>
 <div><a th:href="@{{uri} (uri = ${authorUri})}"
         th:text="${authorName}"></a></div>
+<br>
+<div>
+    Original content is taken from <a href="https://amdm.ru">amdm.ru</a>
+</div>
 </body>
 </html>

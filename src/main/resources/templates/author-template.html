@@ -6,12 +6,16 @@
 </head>
 <body>
 <h1 style="font-size:14pt" th:text="${authorName}"></h1>
-<ol>
+<hr>
+<ul>
     <li th:each="song : ${songs}">
         <a th:href="@{{uri} (uri = ${song.getUri()})}"
            th:text="${song.getName()}"></a>
     </li>
-</ol>
+</ul>
 <hr>
+<div>
+    Original content is taken from <a href="https://amdm.ru">amdm.ru</a>
+</div>
 </body>
 </html>
