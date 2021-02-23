@@ -12,6 +12,8 @@ import java.util.List;
 
 @Component
 public class DefaultResultService implements ResultService {
+    private static final String ROOT = System.getenv("ROOT_URL");
+
     @Override
     public List<InlineQueryResult> toResults(SearchResponse searchResult) {
         List<InlineQueryResult> results = new ArrayList<>();
@@ -20,7 +22,8 @@ public class DefaultResultService implements ResultService {
             InputTextMessageContent messageContent = new InputTextMessageContent();
             messageContent.setDisableWebPagePreview(false);
             messageContent.setMessageText(String.format(
-                    "<a href=\"https://ramdm.herokuapp.com%s\">%s - %s</a>",
+                    "<a href=\"%s%s\">%s - %s</a>",
+                    ROOT,
                     song.getUri(),
                     song.getAuthor().getName(),
                     song.getName()));
