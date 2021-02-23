@@ -1,8 +1,9 @@
 package com.demansh.ramdm.controllers;
 
-import com.demansh.ramdm.songssource.mappers.SongMapper;
+import com.demansh.ramdm.songssource.mappers.Mapper;
 import com.demansh.ramdm.songssource.services.SongService;
-import com.demansh.ramdm.songssource.struct.SongResponse;
+import com.demansh.ramdm.songssource.struct.SongStruct;
+import com.github.demansh.jamdm.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -16,10 +17,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @RequestMapping("authors/{authorPathName}/songs")
 public class SongController {
     private final SongService songService;
-    private final SongMapper songMapper;
+    private final Mapper<Song, SongStruct> songMapper;
 
     @Autowired
-    public SongController(SongService songService, SongMapper songMapper) {
+    public SongController(
+            SongService songService,
+            Mapper<Song, SongStruct> songMapper) {
         this.songService = songService;
         this.songMapper = songMapper;
     }
@@ -32,7 +35,8 @@ public class SongController {
             @PathVariable String pathName,
             @PathVariable String id,
             Model model) {
-        SongResponse song = songMapper.toResponse(songService.getSong(id, pathName, authorPathName));
+        SongStruct song = songMapper.toStruct(
+                songService.getSong(id, pathName, authorPathName));
         model.addAttribute("authorName", song.getAuthor().getName());
         model.addAttribute("authorUri", song.getAuthor().getUri());
         model.addAttribute("songName", song.getName());

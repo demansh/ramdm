@@ -6,17 +6,17 @@ import com.github.demansh.jamdm.Author;
 import java.util.Collection;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AuthorResponse {
+public class AuthorStruct {
     private final Author author;
-    private final Collection<SongResponse> songs;
+    private final Collection<SongStruct> songs;
 
-    public AuthorResponse(Author author,
-                          Collection<SongResponse> songs) {
+    public AuthorStruct(Author author,
+                        Collection<SongStruct> songs) {
         this.author = author;
         this.songs = songs;
     }
 
-    public AuthorResponse(Author author) {
+    public AuthorStruct(Author author) {
         this(author, null);
     }
 
@@ -24,7 +24,7 @@ public class AuthorResponse {
         return author.name();
     }
 
-    public Collection<SongResponse> getSongs() {
+    public Collection<SongStruct> getSongs() {
         if (songs == null) {
             return null;
         }

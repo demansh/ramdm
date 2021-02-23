@@ -4,27 +4,27 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.github.demansh.jamdm.Song;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class SongResponse {
+public class SongStruct {
     private final Song song;
-    private final AuthorResponse authorResponse;
+    private final AuthorStruct authorStruct;
     private final String text;
 
-    public SongResponse(Song song, AuthorResponse authorResponse, String text) {
+    public SongStruct(Song song, AuthorStruct authorStruct, String text) {
         this.song = song;
-        this.authorResponse = authorResponse;
+        this.authorStruct = authorStruct;
         this.text = text;
     }
 
-    public SongResponse(Song song, AuthorResponse authorResponse) {
-        this(song, authorResponse, null);
+    public SongStruct(Song song, AuthorStruct authorStruct) {
+        this(song, authorStruct, null);
     }
 
-    public SongResponse(Song song) {
+    public SongStruct(Song song) {
         this(song, null, null);
     }
 
-    public AuthorResponse getAuthor() {
-        return authorResponse;
+    public AuthorStruct getAuthor() {
+        return authorStruct;
     }
 
     public String getName() {

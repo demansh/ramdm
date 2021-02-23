@@ -1,7 +1,7 @@
 package com.demansh.ramdm.bot.service;
 
-import com.demansh.ramdm.songssource.struct.SearchResponse;
-import com.demansh.ramdm.songssource.struct.SongResponse;
+import com.demansh.ramdm.songssource.struct.SearchStruct;
+import com.demansh.ramdm.songssource.struct.SongStruct;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.inlinequery.inputmessagecontent.InputTextMessageContent;
 import org.telegram.telegrambots.meta.api.objects.inlinequery.result.InlineQueryResult;
@@ -15,10 +15,10 @@ public class DefaultResultService implements ResultService {
     private static final String ROOT = System.getenv("ROOT_URL");
 
     @Override
-    public List<InlineQueryResult> toResults(SearchResponse searchResult) {
+    public List<InlineQueryResult> toResults(SearchStruct searchResult) {
         List<InlineQueryResult> results = new ArrayList<>();
         int c = 0;
-        for (SongResponse song : searchResult.getResult()) {
+        for (SongStruct song : searchResult.getResult()) {
             InputTextMessageContent messageContent = new InputTextMessageContent();
             messageContent.setDisableWebPagePreview(false);
             messageContent.setMessageText(String.format(

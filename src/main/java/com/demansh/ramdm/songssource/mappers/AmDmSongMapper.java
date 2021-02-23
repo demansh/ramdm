@@ -1,17 +1,17 @@
 package com.demansh.ramdm.songssource.mappers;
 
-import com.demansh.ramdm.songssource.struct.AuthorResponse;
-import com.demansh.ramdm.songssource.struct.SongResponse;
+import com.demansh.ramdm.songssource.struct.AuthorStruct;
+import com.demansh.ramdm.songssource.struct.SongStruct;
 import com.github.demansh.jamdm.Song;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AmDmSongMapper implements SongMapper {
+public class AmDmSongMapper implements Mapper<Song, SongStruct> {
     @Override
-    public SongResponse toResponse(Song song) {
-        return new SongResponse(
+    public SongStruct toStruct(Song song) {
+        return new SongStruct(
                 song,
-                new AuthorResponse(song.author()),
+                new AuthorStruct(song.author()),
                 song.text());
     }
 }
