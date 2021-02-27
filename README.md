@@ -6,10 +6,9 @@ mvn clean install
 Run
 Set environmen variables:
 - BOT_TOKEN //telegram bot token
-- ROOT_URL //root url of application like https://myapp.com
 
 ```shell
-mvn spring-boot:run
+mvn spring-boot:run --spring.profiles.active=dev
 ```
 Deploy to Heroku
 ```shell

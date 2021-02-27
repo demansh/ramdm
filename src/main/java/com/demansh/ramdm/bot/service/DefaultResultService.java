@@ -1,7 +1,9 @@
 package com.demansh.ramdm.bot.service;
 
+import com.demansh.ramdm.config.EnvironmentConfig;
 import com.demansh.ramdm.songssource.struct.SearchStruct;
 import com.demansh.ramdm.songssource.struct.SongStruct;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.inlinequery.inputmessagecontent.InputTextMessageContent;
 import org.telegram.telegrambots.meta.api.objects.inlinequery.result.InlineQueryResult;
@@ -12,7 +14,12 @@ import java.util.List;
 
 @Component
 public class DefaultResultService implements ResultService {
-    private static final String ROOT = System.getenv("ROOT_URL");
+    private final EnvironmentConfig environmentConfig;
+
+    @Autowired
+    public DefaultResultService(EnvironmentConfig environmentConfig) {
+        this.environmentConfig = environmentConfig;
+    }
 
     @Override
     public List<InlineQueryResult> toResults(SearchStruct searchResult) {
@@ -23,7 +30,7 @@ public class DefaultResultService implements ResultService {
             messageContent.setDisableWebPagePreview(false);
             messageContent.setMessageText(String.format(
                     "<a href=\"%s%s\">%s - %s</a>",
-                    ROOT,
+                    environmentConfig.getRootUrl(),
                     song.getUri(),
                     song.getAuthor().getName(),
                     song.getName()));

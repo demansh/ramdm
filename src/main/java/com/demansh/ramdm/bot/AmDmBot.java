@@ -10,7 +10,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Component
 public class AmDmBot extends TelegramLongPollingBot {
-    private static final Integer CACHE_TIME = 60;
+    private static final Integer CACHE_TIME = 1;
 
     private final AnswerService answerService;
 
