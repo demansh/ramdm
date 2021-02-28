@@ -8,13 +8,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableCaching
 public class CachingConfig {
-//    @Bean
-//    public CacheManager cacheManager() {
-//        return new ConcurrentMapCacheManager(
-//                "songs",
-//                "authors",
-//                "searches");
-//    }
     @Bean
     public LettuceClientConfigurationBuilderCustomizer lettuceClientConfigurationBuilderCustomizer() {
         return clientConfigurationBuilder -> {
