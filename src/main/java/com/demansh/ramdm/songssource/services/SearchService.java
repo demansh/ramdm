@@ -1,7 +1,7 @@
 package com.demansh.ramdm.songssource.services;
 
-import com.github.demansh.jamdm.Search;
+import com.demansh.ramdm.songssource.struct.SearchStruct;
 
 public interface SearchService {
-    Search getSearch(String query, String page);
+    SearchStruct getSearch(String query, String page);
 }

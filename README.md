@@ -8,8 +8,18 @@ Set environmen variables:
 - BOT_TOKEN //telegram bot token
 
 ```shell
+cd scripts
+./docker.sh
+cd ..
 mvn spring-boot:run --spring.profiles.active=dev
 ```
+
+Connect to redis cli
+```shell
+docker exec -it redis-docker sh
+redis-cli
+```
+
 Deploy to Heroku
 ```shell
 heroku login

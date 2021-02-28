@@ -1,7 +1,7 @@
 package com.demansh.ramdm.songssource.services;
 
-import com.github.demansh.jamdm.Song;
+import com.demansh.ramdm.songssource.struct.SongStruct;
 
 public interface SongService {
-    Song getSong(String id, String pathName, String authorPathName);
+    SongStruct getSong(String id, String pathName, String authorPathName);
 }

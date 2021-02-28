@@ -3,16 +3,19 @@ package com.demansh.ramdm.songssource.struct;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.github.demansh.jamdm.Author;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class AuthorStruct {
-    private final Author author;
+public class AuthorStruct implements Serializable {
+    private static final long serialVersionUID = 5098970251992320524L;
+    private final String authorName;
+    private final String authorPathName;
     private final Collection<SongStruct> songs;
 
-    public AuthorStruct(Author author,
-                        Collection<SongStruct> songs) {
-        this.author = author;
+    public AuthorStruct(Author author, Collection<SongStruct> songs) {
+        this.authorName = author.name();
+        this.authorPathName = author.name();
         this.songs = songs;
     }
 
@@ -21,7 +24,7 @@ public class AuthorStruct {
     }
 
     public String getName() {
-        return author.name();
+        return authorName;
     }
 
     public Collection<SongStruct> getSongs() {
@@ -32,6 +35,6 @@ public class AuthorStruct {
     }
 
     public String getUri() {
-        return String.format("/authors/%s", author.pathName());
+        return String.format("/authors/%s", authorPathName);
     }
 }

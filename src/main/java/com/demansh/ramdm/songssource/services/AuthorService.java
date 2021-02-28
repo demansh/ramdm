@@ -1,7 +1,7 @@
 package com.demansh.ramdm.songssource.services;
 
-import com.github.demansh.jamdm.Author;
+import com.demansh.ramdm.songssource.struct.AuthorStruct;
 
 public interface AuthorService {
-    Author getAuthor(String authorPathName);
+    AuthorStruct getAuthor(String authorPathName);
 }
