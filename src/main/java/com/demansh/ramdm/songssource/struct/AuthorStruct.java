@@ -15,7 +15,7 @@ public class AuthorStruct implements Serializable {
 
     public AuthorStruct(Author author, Collection<SongStruct> songs) {
         this.authorName = author.name();
-        this.authorPathName = author.name();
+        this.authorPathName = author.pathName();
         this.songs = songs;
     }
 
